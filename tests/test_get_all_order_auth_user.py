@@ -17,5 +17,4 @@ class TestGetOrderUser:
     @allure.title("Запрос на получение заказов неавторизованного пользователя")
     def test_updated_order_not_login_user(self):
         response = requests.get(Constants.URL + Constants.END_POINT_ORDER, headers=Constants.headers)
-        body = response
-        assert response.status_code == 401 and body.json()['success'] == False
+        assert response.status_code == 401 and response.json()['success'] == False
